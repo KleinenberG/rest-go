@@ -1,0 +1,11 @@
+name: Test ARC Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: arc-runners   # Это метка, которую слушает ваш runner scale set
+    steps:
+      - run: echo "Hello from ARC runner inside k8s"
+      - run: kubectl get pods   # если нужно проверить доступ к API кластера
